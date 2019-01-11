@@ -22,7 +22,9 @@ public class Circle : MonoBehaviour {
         else
         {
             canDivide = false;
+            Destroy(transform.GetComponent<CircleCollider2D>());
         }
+
         this.sizeListX = sizeListX;
         this.sizeListY = sizeListY;
         this.colorList = colorList;
@@ -31,18 +33,6 @@ public class Circle : MonoBehaviour {
         this.sizeCircleY = sizeCircleY;
 
         AverageColor();
-    }
-
-    private void OnMouseOver()
-    {
-        if (canDivide)
-        {
-            DivideIntoFour();
-        }
-    }
-
-    private void OnMouseEnter()
-    {
     }
 
     public void AverageColor()
@@ -81,13 +71,13 @@ public class Circle : MonoBehaviour {
 
     public void TopLeft()
     {
-        Color[,] newColorList = new Color[sizeListX/2, sizeListY / 2];
+        Color[,] newColorList = new Color[Mathf.FloorToInt(sizeListX / 2), Mathf.FloorToInt(sizeListY / 2)];
 
-        for (int i = 0; i < sizeListY / 2; i++)
+        for (int i = 0; i < Mathf.FloorToInt(sizeListY / 2); i++)
         {
-            for (int j = 0; j < sizeListX / 2; j++)
+            for (int j = 0; j < Mathf.FloorToInt(sizeListX / 2); j++)
             {
-                newColorList[i,j] = colorList[i,j];
+                newColorList[j,i] = colorList[j,i];
             }
         }
 
@@ -107,13 +97,13 @@ public class Circle : MonoBehaviour {
 
     public void TopRight ()
     {
-        Color[,] newColorList = new Color[sizeListX / 2, sizeListY / 2];
+        Color[,] newColorList = new Color[Mathf.FloorToInt(sizeListX / 2), Mathf.FloorToInt(sizeListY / 2)];
 
-        for (int i = 0; i < sizeListY / 2; i++)
+        for (int i = 0; i < Mathf.FloorToInt(sizeListY / 2); i++)
         {
-            for (int j = 0; j < sizeListX / 2; j++)
+            for (int j = 0; j < Mathf.FloorToInt(sizeListX / 2); j++)
             {
-                newColorList[i, j] = colorList[i, j + sizeListX / 2];
+                newColorList[j, i] = colorList[j + Mathf.FloorToInt(sizeListX / 2), i];
             }
         }
 
@@ -133,13 +123,13 @@ public class Circle : MonoBehaviour {
 
     public void BotLeft()
     {
-        Color[,] newColorList = new Color[sizeListX / 2, sizeListY / 2];
+        Color[,] newColorList = new Color[Mathf.FloorToInt(sizeListX / 2), Mathf.FloorToInt(sizeListY / 2)];
 
-        for (int i = 0; i < sizeListY / 2; i++)
+        for (int i = 0; i < Mathf.FloorToInt(sizeListY / 2); i++)
         {
-            for (int j = 0; j < sizeListX / 2; j++)
+            for (int j = 0; j < Mathf.FloorToInt(sizeListX / 2); j++)
             {
-                newColorList[i, j] = colorList[i + sizeListY / 2, j];
+                newColorList[j, i] = colorList[j, i + Mathf.FloorToInt(sizeListY / 2)];
             }
         }
 
@@ -159,13 +149,13 @@ public class Circle : MonoBehaviour {
 
     public void BotRight()
     {
-        Color[,] newColorList = new Color[sizeListX / 2, sizeListY / 2];
+        Color[,] newColorList = new Color[Mathf.FloorToInt(sizeListX / 2), Mathf.FloorToInt(sizeListY / 2)];
 
-        for (int i = 0; i < sizeListY / 2; i++)
+        for (int i = 0; i < Mathf.FloorToInt(sizeListY / 2); i++)
         {
-            for (int j = 0; j < sizeListX / 2; j++)
+            for (int j = 0; j < Mathf.FloorToInt(sizeListX / 2); j++)
             {
-                newColorList[i, j] = colorList[i + sizeListY / 2, j + sizeListX / 2];
+                newColorList[j, i] = colorList[j + Mathf.FloorToInt(sizeListX / 2), i + Mathf.FloorToInt(sizeListY / 2)];
             }
         }
 

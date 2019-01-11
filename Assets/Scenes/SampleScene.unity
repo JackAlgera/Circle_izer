@@ -249,8 +249,9 @@ MonoBehaviour:
   circle: {fileID: 1407573818515932, guid: 6bb4a4781592cd049b559864d2220320, type: 2}
   screenSizeX: 10
   screenSizeY: 10
-  nbrOfCirclesX: 64
-  nbrOfCirclesY: 64
+  nbrOfCirclesX: 171
+  nbrOfCirclesY: 128
+  image: {fileID: 2800000, guid: d8cef6ca143f2404e8b18f13b6f9d7cd, type: 3}
 --- !u!4 &1136771869
 Transform:
   m_ObjectHideFlags: 0
